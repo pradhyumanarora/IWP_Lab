@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container1 {
+    margin-top: 50px;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: normal;
+    border: solid;
+    border-width: 5px;
+    border-color: rgb(88, 0, 88);
+    padding: 5px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 38px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 38px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 38px -9px rgba(0, 0, 0, 0.75);
+}
+
+.container2 {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    /* text-align: center; */
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(88, 0, 88);
+    border-radius: 12px;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    /* background: red; */
+}
+
+.heading {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 30px;
+}
+
+.form {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 100%;
+    /* text-align: center; */
+    /* background: red; */
+}
+
+.form2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* align-items: center; */
+    align-content: center;
+    /* background: red; */
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 50%; */
+}
+
+.input {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    /* translate: -50% 0; */
+    /* background: red; */
+}
+
+.input2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
+    /* background: red; */
+    width: 100%;
+}
+
+.input3 {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.input4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.btn {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.txt {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.input6,
+.input7 {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.field {
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 15px;
+    
+}
+.field:focus{
+    -webkit-box-shadow: inset 0px 0px 4px 0.2px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 0px 4px 0.2px rgba(0,0,0,0.75);
+box-shadow: inset 0px 0px 4px 0.2px rgba(0,0,0,0.75);
+}
+.input8{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    text-align: center;
+    width: 100%;
+    /* height:20; */
+    /* background: red; */
+}
+.input9{
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 25px;
+    border: solid;
+    border-color:rgb(88, 0, 88) ;
+    margin-top: -35px;
+    translate: 0 28px;
+    background: white;
+    font-weight: bold;
+}
+.input9:hover{
+    cursor: pointer;
+    background: rgb(2, 237, 2);
+    color: white;
+}

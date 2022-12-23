@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Importing CSS file -->
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="heading">Hackathon Registration Form</div>
+    <div class="form-wrapper">
+      <form class="form-content">
+        < class="form-2">
+          <div class="info">
+            <label for="fname">First name:</label>
+            <input type="text" class="field" name="fname" id="fname" required />
+          </div>
+          <div class="info">
+            <label for="lname">Last name:</label>
+            <input type="text" class="field" name="lname" id="lname" required />
+          </div>
+          <div class="info">
+            <label for="contact">Phone Number:</label><br />
+            <input type="tel" class="field" name="contact" id="contact" required />
+          </div>           
+            <div class="info">
+              <!-- Using Radio Input Type -->
+              <p>Gender:</p>
+              <input type="radio" name="gender" id="male" value="male"  required/>
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="female" value="female" required/>
+              <label for="female">Female</label><br />
+            </div>
+          <div class="info">
+            <!-- Using email Input Type -->
+            <label for="email">Email Id:</label><br />
+            <input type="email" name="email" id="email" class="field" required/>
+          </div>
+          <div class="info">
+              <label for="ins-name" >Institute Name</label>
+              <input type="text" name="ins-name" id="ins-name" class="field" required/>
+          </div>
+          <div class="info">
+            <!-- Using CheckBox Input Type -->
+            <p>TECH STACK</p>
+            <div class="check">
+              <div class="cont">
+                <label for="stack1">Node JS</label>
+                <input type="checkbox" name="stack1" id="stack1" value="Node Js" />
+              </div>
+              <div class="cont">
+                <label for="stack2">React JS</label>
+                <input type="checkbox" name="stack2" id="stack2" value="React Js" />
+              </div>
+              <div class="cont">
+                <label for="stack3">PHP</label>
+                <input type="checkbox" name="stack3" id="stack3" value="PHP" />
+              </div>
+              <div class="cont">
+                <label for="stack4">Angular</label>
+                <input type="checkbox" name="stack4" id="stack4" value="Angular" />
+              </div>
+              <div class="cont">
+                <label for="stack5">Django</label>
+                <input type="checkbox" name="stack5" id="stack5" value="Django" />
+              </div>
+              <div class="cont">
+                <label for="stack6">Flask</label>
+                <input type="checkbox" name="stack6" id="stack6" value="Flask" />
+              </div>
+              <div class="cont">
+                <label for="stack7">Tailwind</label>
+                <input type="checkbox" name="stack7" id="stack7" value="Tailwind" />
+              </div>
+            </div>
+          </div>
+          <!-- Using Select Input Type -->
+          <div class="participants">
+            <label for="part">No of Participants</label>
+            <select name="part" id="part" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <!-- Using TextArea Input Type -->
+          <div class="info">
+            <textarea name="idea" id="idea" cols="50" rows="10" style="padding:10px;" required placeholder="Enter Your Discription"></textarea>
+          </div>
+          <!-- Using File Input Type to take file from user -->
+          <div class="upload">
+            <label class="uploadbtn" for="up">UPLOAD</label>
+            <input type="file" name="up" id="up" style="display:none;" required>
+          </div>
+          <div class="btn-wrp">
+            <input type="reset" value="Reset" class="btn"/>
+            <input type="submit" value="Submit" class="btn" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
