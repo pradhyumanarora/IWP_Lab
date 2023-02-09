@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            height: 100vh;
+        }
+        .wrapper{
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items : center;
+            width: 300px;
+            height: 500px;
+        }
+        input{
+            margin :5px;
+            width: fit-content;
+        }
+        
+         
+
+    </style>
+</head>
+
+<body class="bd">
+    <div class="wrapper">
+        <form>
+            <label for="aname">Name</label><br>
+            <input type="text" id="aname" name="aname"><br>
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address"><br>
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" name="phone"><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="date">Date</label><br>
+            <input type="date" id="date" name="date"><br>
+            <label for="time">Time</label><br>
+            <input type="time" id="time" name="time"><br>
+            <p>Doctors :</p>
+            <input type="radio" id="d1" name="d1" value="d1">
+            <label for="d1">Doctor 1</label>
+            <input type="radio" id="d2" name="d2" value="d2">
+            <label for="d2">Doctor 2</label>
+            <br>
+            <label for="tdisease">Type of Disease</label><br>
+            <input list="disease" id="tdisease" name="tdisease">
+            <datalist id="disease">
+                <option value="Typhoid">Typhoid</option>
+                <option value="Choler">Cholera</option>
+                <option value="Viral">Viral</option>
+            </datalist>
+        </form>
+    </div>
+    <!--  -->
+</body>
+
+</html>

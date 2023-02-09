@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.form_body{
+    display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: flex-start;
+  /* border : 1px solid black; */
+  padding: 20px;
+  width : 70%;
+}
+
+.form_content{
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.form_content1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-top: 18px;
+}
+
+.name_label{
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  width: 100px;
+}
+.name_field{
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  /* border: solid 1px; */
+  width: 50%;
+  /* width: 90%; */
+  /* margin-left: 10px; */
+  
+}
+.form_heading{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 3.2px;
+    /* border-bottom: solid black; */
+}
+
+#name{
+    width:100%;
+    /* box-shadow: inset 0px 0px 0px 0px; */
+    box-shadow: 0px 0px 5px 0.6px rgba(81, 81, 81,0.5);
+    border-radius: 4px;
+    height: 22.5px;
+}
+#email{
+    width:100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0.6px rgba(81, 81, 81,0.5);
+    height: 22.5px;
+}
+
+#phone{
+  border-radius: 2px;
+  height: 22.5px;
+}
+.dropdown{
+    width:30%;
+}
+
+.tele_field{
+    width: 9.8%;
+    box-shadow: 0px 0px 5px 0.6px rgba(81, 81, 81,0.5);
+    height: 22.5px;
+}
+
+.btn1{
+    background: #f5a300;
+    color: white;
+width: 80px;
+height: 30px;
+border-radius: 5px;
+margin-left: 90px;
+border: solid 0px;
+translate: 100%;
+margin-top: 18px;
+}
+
+#msg{
+    width:100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0.6px rgba(81, 81, 81,0.5);
+    /* height: 22.5px; */
+}
+
+.star{
+  color : red;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:rgb(156, 156, 156);
+    height: 1.5px;
+  }

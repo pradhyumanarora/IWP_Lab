@@ -1,0 +1,95 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  color: rgb(187, 33, 79);
+  height: 100vh;
+  width: auto;
+  padding: 100px;
+}
+
+.head {
+  border-top: 0.5px rgb(187, 33, 79) solid;
+  border-right: 0.5px rgb(187, 33, 79) solid;
+  border-left: 0.5px rgb(187, 33, 79) solid;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: pink;
+  box-shadow: 3em black;
+}
+
+.formwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 600px;
+}
+.form {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  width: 60%;
+}
+
+label {
+  margin: 7px;
+}
+.personal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  box-shadow: 10px 10px 60px -5px pink inset;
+  border: 2px solid rgb(250, 127, 148);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 7px;
+  height: 200px;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: flex-start;
+  box-shadow: 10px 10px 60px -5px pink inset;
+  border: 2px solid rgb(250, 127, 148);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 7px;
+}
+
+#submit {
+  padding: 5px;
+  margin: 5px;
+  background-color: rgb(226, 96, 183);
+  color: white;
+  border-radius: 5px;
+  font-family: Georgia;
+  border: solid 0px;
+  width: 25%;
+  translate: 82% 0;
+  margin-left: 18%;
+}
+
+.pers_input {
+  box-shadow: 1px 1px 5px 2px pink inset;
+}
+
+textarea {
+  box-shadow: 3px 2px 8px 4px pink inset;
+}
+
+.select_opt1 {
+  color: rgb(187, 33, 79);
+  width: 60%;
+}
+
+.star{
+    color: red;
+}

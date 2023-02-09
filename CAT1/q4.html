@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-align : justify;
+        }
+    </style>
+</head>
+<body >
+    <!-- <map name="so">
+        <area shape ="circle" coords="200,200,40" title="circle" href="/q1.html">
+    </map>
+    <img src = "./workplace.jpg" alt = "Arijit Singh" usemap="#so">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cupiditate, fuga enim quaerat sed iure laudantium molestiae eius fugit sit itaque perspiciatis odit similique accusantium magnam modi unde. Amet officia nisi nihil ullam id, aliquam ut, quam aliquid asperiores labore dolor, quod quae magnam rerum facere blanditiis impedit voluptatum sapiente iste nulla dolorum quis inventore quibusdam! Dolor nostrum praesentium, vitae dicta sit amet modi, nisi magnam blanditiis cumque aliquid natus? Temporibus, omnis sapiente? Perferendis harum nobis natus non assumenda reiciendis, iure illum porro, blanditiis quaerat possimus eaque laborum temporibus voluptatem dolore aut dicta vero, doloribus dignissimos atque veritatis maiores tenetur consequatur! Magnam, debitis placeat impedit blanditiis, harum tenetur quos, adipisci nam aspernatur earum vel accusantium minus saepe voluptates voluptatem distinctio omnis iusto aliquid tempora dolorum? Libero, voluptatem eos eius deserunt corrupti aspernatur sit molestiae doloremque? Enim beatae, ipsum accusamus eius illum est modi impedit commodi temporibus consequuntur nihil, aliquam amet facilis quo, quis praesentium voluptas ab repellat. Sapiente quidem labore porro dolores sit est sunt. Nostrum debitis asperiores explicabo tempora itaque recusandae facilis pariatur error dolorem aliquid quis, eveniet deleniti exercitationem eos possimus animi odio eius saepe culpa distinctio. Quasi officiis omnis veritatis expedita explicabo ipsum sint, deserunt, quis quibusdam blanditiis ex iste quod fugit commodi nam itaque cum? Tenetur, accusamus ducimus voluptatum atque quam placeat nisi tempore sed laudantium vel quibusdam odio nihil, perferendis similique, nulla rem deleniti eligendi autem! Id praesentium beatae soluta, at corrupti enim quos, sunt laboriosam totam sit illum mollitia veniam nam facilis reprehenderit unde aspernatur. Tempora reiciendis repellat maxime consequatur numquam, doloribus quam impedit aperiam repellendus inventore ad iusto temporibus suscipit quo nemo debitis. Veritatis, saepe. Velit nulla corporis, in nesciunt sequi reprehenderit doloribus distinctio nam quasi voluptatibus aperiam accusantium non voluptatem cupiditate? Quasi sed nihil expedita laudantium facere. Dicta officia unde deleniti natus repellendus distinctio tempora, voluptates, accusantium tempore a, blanditiis porro? Nihil, deleniti a. Eligendi provident cumque cupiditate error repellendus magnam fugiat labore neque aut dignissimos sapiente commodi in, laboriosam, facilis voluptates harum sit velit ratione doloremque eveniet nobis aliquid, rem dolore possimus! Veritatis accusamus eaque aspernatur illo ea quis, vel perferendis quod vero odit aliquam exercitationem molestiae iure tempora laudantium voluptatem repellat nulla iste quisquam non dolore nemo at. Possimus, exercitationem! Voluptatem nulla inventore repudiandae perspiciatis pariatur molestiae odit cum eveniet odio vel perferendis reiciendis voluptatum quos unde dicta nemo minus veritatis reprehenderit rerum ipsum necessitatibus voluptatibus, dolore aspernatur quas? Veniam, tempora cum facilis fugiat esse eaque dolorum voluptas, a voluptate deserunt facere corrupti illum natus architecto consequatur aliquid iste officia vel sed rerum? Libero qui porro necessitatibus asperiores facere, quibusdam veritatis natus perspiciatis doloremque in sapiente impedit deleniti error ab commodi quaerat. Quasi tempora animi quis rerum minima optio, nulla quod veritatis, at similique ex. Sit fuga exercitationem, minima doloremque, eum quos, natus quo commodi dignissimos labore sunt dolores. Nihil quibusdam, eos asperiores, accusantium commodi laboriosam a vero quisquam aut molestiae excepturi iusto beatae voluptatibus voluptas blanditiis, ad rem laudantium dolor sed fuga officiis reiciendis soluta obcaecati facilis. Repellendus, nam?</p> -->
+    <!-- <canvas id="mycanvas" width="300px" height="200px" style="border: 1px solid black">
+        Your browser dont support canvas
+    </canvas> -->
+    <canvas id="mycanva" width ="200" height ="100" style="border : 1px solid black">Not Suppoerted</canvas>
+    <canvas id="myc" width="300" height="200" style="border:1px solid black"></canvas>
+</body>
+<script>
+    //var c = document.getElementById("mycanvas");
+    //var ctx = c.getContext("2d");
+    //ctx.moveTo(0,0);
+    //ctx.lineTo(300,200);
+    //ctx.stroke();
+
+    var d = document.getElementById("mycanva");
+    var ctx = d.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(100,50,50,0,2*Math.PI);
+    ctx.stroke();   
+
+    var e = document.getElementById("myc");
+    var ctx = e.getContext("2d");
+    ctx.moveTo(0,200);
+    ctx.lineTo(150,0);
+    ctx.lineTo(300,200);
+    
+
+    ctx.stroke();   
+</script>
+</html>

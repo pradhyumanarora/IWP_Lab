@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function encrypt(){
+            x = document.getElementById("pin").value;
+            var IntArr = String(x).split("").map((x)=>{
+                return Number(x);
+            })
+            <!-- document.getElementById("output").innerHTML = "New Pin : " + IntArr; -->
+            for(i=0;i<IntArr.length;i++){
+                IntArr[i]+=7;
+                IntArr[i]%=10;
+            }
+            //document.getElementById("output").innerHTML = "New Pin : " + IntArr;
+            [IntArr[0],IntArr[2]]=[IntArr[2],IntArr[0]];
+            [IntArr[1],IntArr[3]]=[IntArr[3],IntArr[1]];
+            document.getElementById("output").innerHTML = "New Pin : " + IntArr;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="pin">
+            Enter UPI PIN
+        </label>
+        <input type="password" id="pin" name="pin">
+        <!-- <input type="submit" id="submit" name="submit" onclick="encrypt()"> -->
+        <button type="button" onclick="encrypt()">Submit</button>
+    </form>
+    <p id="output"></p>
+</body>
+</html>

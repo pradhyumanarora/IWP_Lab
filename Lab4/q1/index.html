@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="formwrapper">
+      <form action="" class="form">
+        <fieldset class="personal">
+          <legend class="head">Personal</legend>
+          <div class="fields">
+            <label for="name">Name<span class="star">&nbsp;*</span></label>
+            <input class="pers_input" type="text" id="name" name="name"/><br />
+          </div>
+          <div class="fields">
+            <label for="email">Email<span class="star">&nbsp;*</span></label>
+            <input class="pers_input" type="text" id="email" name="email" /><br />
+          </div>
+          <div class="fields">
+            <label for="phone">Phone<span class="star">&nbsp;*</span></label>
+            <input class="pers_input" type="tel" id="phone" name="phone" /><br />
+          </div>
+          <div class="fields">
+            <label for="subject">Subject</label>
+            <select class="pers_input select_opt1" id="subject">
+              <option class="select_opt" value="appointement">Appointement</option>
+              <option class="select_opt" value="leave">Leave</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="message">
+          <legend class="head">Message</legend>
+          <div class="fields">
+            <!-- <p>Message:</p> -->
+          <label for="message" class="inner_msg">Message<span class="star">&nbsp;*</span></label>
+          <textarea name="message" id="message" cols="30" rows="5"></textarea>
+        </div>
+          <input type="submit"  id="submit">
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
