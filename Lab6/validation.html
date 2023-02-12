@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Company Registration</title>
+    <script>
+        function validateForm() {
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("form");
+            y = document.getElementsByClassName("error");
+            for (i = 0; i < x.length; i++) {
+                if (x[i].value == "") {
+                    y[i].innerHTML = "Field is required";
+                    x[i].style.borderColor = "red";
+                    valid = false;
+                } else {
+                    y[i].innerHTML = "";
+                    x[i].style.borderColor = "green";
+                }
+            }
+            if (valid == true) {
+                var name = document.forms["insuranceForm"]["fullName"].value;
+                var nameRegExp = /^[a-zA-Z ]{2,30}$/;
+                if (!nameRegExp.test(name)) {
+                    document.getElementById("fullNameError").innerHTML = "Please enter a valid name";
+                    document.getElementById("fullName").style.borderColor = "red";
+                    valid = false;
+                }
+                else
+                    document.getElementById("fullName").style.borderColor = "green";
+                var email = document.forms["insuranceForm"]["email"].value;
+                var emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if (!emailRegExp.test(email)) {
+                    document.getElementById("emailError").innerHTML = "Please enter a valid email address";
+                    document.getElementById("email").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("email").style.borderColor = "green";
+                }
+                var phone = document.forms["insuranceForm"]["phone"].value;
+                var phoneRegExp = /^\d{10}$/;
+                if (!phoneRegExp.test(phone)) {
+                    document.getElementById("phoneError").innerHTML = "Please enter a valid phone number(10 digits)";
+                    document.getElementById("phone").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("phone").style.borderColor = "green";
+                }
+                var dob = document.forms["insuranceForm"]["dob"].value;
+                var dobRegExp = /^\d{4}-\d{2}-\d{2}$/;
+                if (!dobRegExp.test(dob)) {
+                    document.getElementById("dobError").innerHTML = "Please enter a valid date of birth(YYYY - MM - DD)";
+                    document.getElementById("dob").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("dob").style.borderColor = "green";
+                }
+                var address = document.forms["insuranceForm"]["address"].value;
+                var addressRegExp = /^[a-zA-Z0-9\s,'-]{5,100}$/;
+                if (!addressRegExp.test(address)) {
+                    document.getElementById("addressError").innerHTML = "Please enter a valid address";
+                    document.getElementById("address").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("address").style.borderColor = "green";
+                }
+                var city = document.forms["insuranceForm"]["city"].value;
+                var cityRegExp = /^[a-zA-Z\s]{2,30}$/;
+                if (!cityRegExp.test(city)) {
+                    document.getElementById("cityError").innerHTML = "Please enter a valid city name";
+                    document.getElementById("city").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("city").style.borderColor = "green";
+                }
+                var state = document.forms["insuranceForm"]["state"].value;
+                var stateRegExp = /^[a-zA-Z\s]{2,30}$/;
+                if (!stateRegExp.test(state)) {
+                    document.getElementById("stateError").innerHTML = "Please enter a valid state name";
+                    document.getElementById("state").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("state").style.borderColor = "green";
+                }
+                var zip = document.forms["insuranceForm"]["zip"].value;
+                var zipRegExp = /^\d{6}$/;
+                if (!zipRegExp.test(zip)) {
+                    document.getElementById("zipError").innerHTML = "Please enter a valid zip code (6 digits) ";
+                    document.getElementById("zip").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("email").style.borderColor = "green";
+                }
+                var policy = document.forms["insuranceForm"]["policy"].value;
+                var policyRegExp = /^[a-zA-Z0-9\s]{5,50}$/;
+                if (!policyRegExp.test(policy)) {
+                    document.getElementById("policyError").innerHTML = "Please enter a valid policy name";
+                    document.getElementById("policy").style.borderColor = "red";
+                    valid = false;
+                }
+                else {
+                    document.getElementById("policy").style.borderColor = "green";
+                }
+            }
+            if (valid)
+                alert("Form submitted Succesfully");
+            return valid;
+        }
+    </script>
+</head>
+
+<body>
+    <h2 style="margin-left: auto;margin-right: auto;width: 25%;">Insurance Company
+        Registration</h2>
+    <form name="insuranceForm" onsubmit="return validateForm()">
+        <div
+            style="display: flex;border: 1px solid black; width: 40%;height: 400px;padding-top: 20px;padding-left: 13%;margin-left: auto;margin-right: auto;">
+            <div>
+                <label for="fullName" style="padding-top: 2px;">Full Name:</label><br><br>
+                <label for="email" style="margin-top: 10px;">Email:</label><br><br>
+                <label for="phone" style="padding-top: 2px;">Phone:</label><br><br>
+                <label for="dob" style="margin-top: 10px;display: block;">Date of
+                    Birth:</label><br>
+                <label for="address">Address:</label><br><br>
+                <label for="city" style="margin-top: 2px;display: block;">City:</label>
+                <label for="state" style="margin-top: 22px;display: block;">State:</label>
+                <label for="zip" style="margin-top: 23px;display: block;">Zip:</label>
+                <label for="policy" style="margin-top: 22px;display: 
+block;">Policy:</label><br><br>
+            </div>
+            <div>
+                <input type="text" id="fullName" name="fullName" class="form">
+                <span class="error" id="fullNameError"></span><br><br>
+                <input type="text" id="email" name="email" class="form">
+                <span class="error" id="emailError"></span><br><br>
+                <input type="text" id="phone" name="phone" class="form">
+                <span class="error" id="phoneError"></span><br><br>
+                <input type="text" id="dob" name="dob" class="form">
+                <span class="error" id="dobError"></span><br><br>
+                <input type="text" id="address" name="address" class="form">
+                <span class="error" id="addressError"></span><br><br>
+                <input type="text" id="city" name="city" class="form">
+                <span class="error" id="cityError"></span><br><br>
+                <input type="text" id="state" name="state" class="form">
+                <span class="error" id="stateError"></span><br><br>
+                <input type="text" id="zip" name="zip" class="form">
+                <span class="error" id="zipError"></span><br><br>
+                <input type="text" id="policy" name="policy" class="form">
+                <span class="error" id="policyError"></span><br><br>
+            </div>
+        </div>
+        <input type="submit" value="Submit" style="margin-left: 48%;margin-top: 20px;">
+    </form>
+</body>
+
+</html

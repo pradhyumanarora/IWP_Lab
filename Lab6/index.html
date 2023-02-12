@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Form</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px;
+        }
+
+        #submit {
+            padding: 5px;
+        }
+
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        label {
+            text-align: left;
+            width: 100px;
+            margin: 5px;
+        }
+
+        input {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.forms["insuranceForm"]["name"].value;
+            var email = document.forms["insuranceForm"]["email"].value;
+            var phone = document.forms["insuranceForm"]["phone"].value;
+            var dob = document.forms["insuranceForm"]["dob"].value;
+            var address = document.forms["insuranceForm"]["address"].value;
+            var city = document.forms["insuranceForm"]["city"].value;
+            var state = document.forms["insuranceForm"]["state"].value;
+            var pin = document.forms["insuranceForm"]["pin"].value;
+            var type = document.forms["insuranceForm"]["type"].value;
+            var coverage = document.forms["insuranceForm"]["coverage"].value;
+            var duration = document.forms["insuranceForm"]["duration"].value;
+
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+            if (!nameRegex.test(name)) {
+                alert("Invalid name");
+                return;
+            }
+
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email");
+                return;
+            }
+
+            if (phone == "") {
+                alert("Phone must be filled out");
+                return false;
+            }
+
+            const phoneRegex = /^\+91 \d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Invalid Indian phone number (format: +91 1234567890)");
+                return;
+            }
+
+            if (dob == "") {
+                alert("Date of Birth must be filled out");
+                return false;
+            }
+
+            const dobRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+            if (!dobRegex.test(dob)) {
+                alert("Invalid date of birth (format: dd/mm/yyyy)");
+                return;
+            }
+
+            if (address == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+            if (!/^[a-zA-Z0-9]+$/.test(address)) {
+                alert('Address can only contain letters and numbers');
+                return;
+            }
+
+            if (city = "") {
+                alert("City must be filled out");
+                return false;
+            }
+
+
+            if (type == "") {
+                alert("Type of Insurance must be selected");
+                return false;
+            }
+            const typeRegex = /^(health|life|auto)$/;
+            if (!typeRegex.test(type)) {
+                alert("Invalid type of insurance");
+                return;
+            }
+
+            if (coverage == "") {
+                alert("Coverage Amount must be filled out");
+                return false;
+            }
+
+            const coverageRegex = /^[0-9]+$/;
+            if (!coverageRegex.test(coverage)) {
+                alert("Invalid coverage amount");
+                return;
+            }
+
+            if (duration == "") {
+                alert("Duration must be filled out");
+                return false;
+            }
+            const durationRegex = /^[0-9]+$/;
+            if (duration < 1) {
+                alert("Duration must be minimum 1 year");
+                return;
+            }
+            if (!durationRegex.test(duration)) {
+                alert("Invalid duration");
+                return;
+            }
+            alert("Form submitted successfully");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Insurance Form</h1>
+    <div class="form-wrapper">
+        <form name="insuranceForm" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Personal Information:</legend>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="text" id="dob" name="dob">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="pin">Pin Code:</label>
+                    <input type="text" id="pin" name="pin">
+
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Insurance Information:</legend>
+                <div class="form-group">
+
+                    <label for="type">Type of Insurance:</label>
+                    <select id="type" name="type">
+                        <option value="">Select an option</option>
+                        <option value="health">Health</option>
+                        <option value="life">Life</option>
+                        <option value="auto">Auto</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+
+                    <label for="coverage">Coverage Amount:</label>
+                    <input type="number" id="coverage" name="coverage">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="duration">Duration (in years):</label>
+                    <input type="number" id="duration" name="duration">
+
+                </div>
+            </fieldset>
+            <div class="submit">
+                <input type="submit" value="Submit" id="submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
