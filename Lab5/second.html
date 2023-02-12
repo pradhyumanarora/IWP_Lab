@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="array">Enter Array separated by &quot;,&quot; <i>(comma)</i></label><br>
+        <input type="text" id="array" style="margin-top: 10px;">
+        <input type="submit" onclick="find()">
+    </form>
+</body>
+<script>
+    function sum(k){
+        let s =0;
+        for(i=0;i<k.length;i++){
+            s+=parseInt(k[i]);
+        }
+        return s;
+    }
+    function multiply(k){
+        let m=1;
+        for(i=0;i<k.length;i++){
+            m*=k[i];
+        }
+        return m;
+    }
+
+    function find(){
+    let arr = document.getElementById('array').value;
+    if(arr == ""){
+        alert("Please enter the array");
+        return;
+    }
+    let k = arr.split(',')
+    document.writeln("The Array elements are : " + k)
+    document.writeln("<br>The Sum of elements is : " + sum(k));
+    document.writeln("<br>The Multiplication of elements is : " + multiply(k));
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="kms">Number of Kilometers</label><br>
+        <input type="text" id="kms" name="kms"><br>
+        <label for="cost">Cost of petrol</label><br>
+        <input type="text" id="cost" name="cost"><br>
+        <label for="consumption">Petrol Consumption (km/l)</label><br>
+        <input type="text" id="cons" name="cons"><br>
+        <input type="submit" style="margin-top:5px;"onclick="calc()">
+    </form>    
+</body>
+<script>
+    function calc(){
+        let kms = document.getElementById('kms').value;
+        let cost = document.getElementById('cost').value;
+        let consumption = document.getElementById('cons').value;
+        if(kms == "" || cost == "" || consumption == ""){
+            alert("Please enter all the values");
+            return;
+        }
+        let total_cost = (kms/consumption)*cost;
+        document.writeln("The total cost of Trip is = " + total_cost);
+    }
+</script>
+</html>
