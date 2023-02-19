@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width: 100%;   
+    height: 100%;
+}
+.flexcontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+.layout{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    background-color:#f2eecb ;
+    /* border: 1px solid black; */
+}
+
+.papername{
+    font-size: 8vh;
+    text-align: center;
+    width: fit-content;
+    /* border: 1px solid black; */
+}
+
+.underline{
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+    fill: black;
+}
+
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px 2px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Box1 Box2 Box3"
+      "Box4 Box5 Box6";
+    margin: 20px;
+    height: 100%;
+  }
+  
+  .Box1 { grid-area: Box1; 
+    margin: 5px;
+    padding: 2px;
+    }
+  
+  .Box2 { grid-area: Box2; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box3 { grid-area: Box3; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box5 { grid-area: Box5; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box4 { grid-area: Box4; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box6 { grid-area: Box6; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box7 { grid-area: Box7; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box8 { grid-area: Box8; 
+    margin: 5px;
+    padding: 2px;}
+  
+  .Box9 { grid-area: Box9; 
+    margin: 5px;
+    padding: 2px;}
+  
+.left-col{
+    width: 20%;
+}
+.right-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    /* border: 1px solid black; */
+
+}
+.tools{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    /* border: 1px solid black; */
+}
+
+.content{
+    text-align: justify;
+}
+
+.heading{
+    margin-bottom: 8px;
+}
+.image{
+    height: 100px;
+}
