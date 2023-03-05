@@ -311,3 +311,12 @@ a{
     height: 50px;
     margin-top: 50px;
 }
+
+footer{
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}

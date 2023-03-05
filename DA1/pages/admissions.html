@@ -1,52 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../style/contact.css">
-    <link rel="icon" type="image/x-icon" href="./assets/favico.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admissions</title>
+  <link rel="stylesheet" href="../style/admissions.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favico.ico">
 </head>
+
 <body>
-    <header>
-        <div class="nav-container">
-          <nav>
-            <div class="flex-items">
-              <img src="../assets/logo1.png" class="logo" />
-            </div>
-            <ul class="menu-items">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="./about.html">About US</a></li>
-              <!-- <li> -->
-                <div class="drop1">
-                  <a href="./academics.html" class="drop1">Academics</a>
-                  <div class="drop2">
-                      Computer Science
-                      <hr>
-                      Electronics
-                      <hr>
-                      Electronics & communication
-                      <hr>
-                      Electrical
-                      <hr>
-                      Mechanical
-                      <hr>
-                      Civil
-                      <hr>
-                      Chemical
-                      <hr>
-                      Fashion Designing
-                      <hr>
-                      Law
-                  </div>
-                </div>
-              <!-- </li> -->
-              <!-- <li><a href="services.html">Academics</a></li> -->
-              <li><a href="./admissions.html">Admissions</a></li>
-              <li><a href="./campus-life.html">Campus Life</a></li>
-              <li><a href="./contact.html">Contact Us</a></li>
-            </ul>
-          </nav>
+  <header>
+    <div class="nav-container">
+      <nav>
+        <div class="flex-items">
+          <img src="../assets/logo1.png" class="logo" />
         </div>
-      </header>
+        <ul class="menu-items">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about.html">About US</a></li>
+          <!-- <li> -->
+          <div class="drop1">
+            <a href="./academics.html" class="drop1">Academics</a>
+            <div class="drop2">
+              Computer Science
+              <hr>
+              Electronics
+              <hr>
+              Electronics & communication
+              <hr>
+              Electrical
+              <hr>
+              Mechanical
+              <hr>
+              Civil
+              <hr>
+              Chemical
+              <hr>
+              Fashion Designing
+              <hr>
+              Law
+            </div>
+          </div>
+          <!-- </li> -->
+          <!-- <li><a href="services.html">Academics</a></li> -->
+          <li><a href="./admissions.html">Admissions</a></li>
+          <!-- <li><a href="./campus-life.html">Campus Life</a></li> -->
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="adm-img"></div>
+  <!-- <img src="../assets/giant-check-list/2136912.jpg" alt="admission" class="adm-img"> -->
+  <div class="form-wrapper">
+  <form>
+    <fieldset>
+      <legend>
+        <h2>University Admission Form</h2>
+      </legend>
+      <p>Please fill out the following information:</p>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      <br><br>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+      <br><br>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Program Information</legend>
+      <label for="program">Program of Interest:</label>
+      <select id="program" name="program" required>
+        <option value="">Select a program</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Business Administration">Business Administration</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Arts">Arts</option>
+      </select>
+      <br><br>
+
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>  
+<footer>copyright &copy; Pradhyuman Arora</footer>
+</body>
+
+</html>

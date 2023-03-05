@@ -169,3 +169,8 @@ footer{
     background: rgba(0, 0, 0, 0.3);
     height: 35px;
   }
+
+  p,h1,h2{
+    margin: 20px;
+    text-align: justify;
+  }
