@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jquery</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+    integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+  <style>
+    button {
+      width: 10vh;
+      height: 5vh;
+      margin: 5px;
+      background-color: transparent;
+    }
+
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    #extract {
+      width: 20vh;
+      height: 5vh;
+      margin: 5px;
+      border-radius: 4px;
+      background-color: transparent;
+    }
+
+    #extract:hover {
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+
+    #search-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #search-btn:hover {
+      cursor: pointer;
+      background-color: #0069d9;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    #searchBox {
+      width: 20%;
+      padding: 8px 16px;
+      font-size: 16px;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #searchBox:focus {
+      outline: none;
+    }
+
+    #result {
+      padding: 10px; /* add padding to the content */
+      font-size: 18px; /* set the font size */
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h2>Button background color change</h2>
+  <button id="red">Red</button>
+  <button id="green">Green</button>
+  <button id="blue">Blue</button>
+
+  <h2>Extracting Text from List</h2>
+  <ul id="names">
+    <li>Disha</li>
+    <li>Preyash</li>
+    <li>Avani</li>
+    <li>Abhraneel</li>
+    <li>Dishant</li>
+    <li>Ritik</li>
+  </ul>
+
+  <button id="extract" onclick="extracttext()">Extract Text</button>
+
+  <div id="result"></div>
+
+
+
+  <h2>Searching Town</h2>
+  <input type="text" id="searchBox" placeholder="Search...">
+  <button onclick="search()" id="search-btn">Search</button>
+  <ul id="townList">
+    <li>New York</li>
+    <li>Los Angeles</li>
+    <li>Chicago</li>
+    <li>Houston</li>
+    <li>Phoenix</li>
+    <li>Philadelphia</li>
+    <li>San Antonio</li>
+    <li>San Diego</li>
+    <li>Dallas</li>
+    <li>San Jose</li>
+  </ul>
+
+
+</body>
+<script>
+  $("#red").hover(
+    function () {
+      $(this).css({
+        "background-color": "red",
+        "font-weight": "bold"
+      });
+    },
+    function () {
+      $(this).css({
+        "background-color": "transparent",
+        "font-weight": "normal"
+      });
+    }
+  );
+
+  $("#green").hover(
+    function () {
+      $(this).css({ "background-color": "green", "font-weight": "bold", "color": "white" });
+    },
+    function () {
+      $(this).css({ "background-color": "transparent", "font-weight": "normal" , "color": "black"});
+    }
+  );
+
+  $("#blue").hover(
+    function () {
+      $(this).css({ "background-color": "blue", "font-weight": "bold" , "color": "white"});
+    },
+    function () {
+      $(this).css({ "background-color": "transparent", "font-weight": "normal" , "color": "black"});
+    }
+  );
+
+  function extracttext() {
+    let items = $("ul#names li")
+      .toArray()
+      .map((li) => li.textContent)
+      .join(", ");
+    $("#result").text(items);
+  }
+
+  function search() {
+    var input, filter, ul, li, i, txtValue;
+    input = document.getElementById("searchBox");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("townList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+      txtValue = li[i].textContent || li[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].classList.add("bold");
+      } else {
+        li[i].classList.remove("bold");
+      }
+    }
+  }
+</script>
+
+</html>

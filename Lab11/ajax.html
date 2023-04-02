@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <style>
+    .product-card {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    ol:first-of-type {
+      width: 50%;
+      background-color: rgb(227, 181, 88);
+      color: blue;
+    }
+
+    ol:first-of-type>li::after {
+      content: " in the list!";
+    }
+
+    a[name] {
+      color: #eee;
+    }
+    .task {
+      width: 100%;
+      /*height: 100vh;*/
+      background-color: rgb(163, 156, 156);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="products-container"></div>
+  <div class="task">
+    <ol>
+      <li class="li-text">Cold Drinks</li>
+      <li class="li-text">T-Shirt</li>
+      <li class="li-text">Watch</li>
+      <li class="li-text">Wallet</li>
+    </ol>
+    <ol>
+      <li class="li-text">Cold Drinks</li>
+      <li class="li-text">T-Shirt</li>
+      <li class="li-text">Watch</li>
+      <li class="li-text">Wallet</li>
+    </ol>
+    <a name='test' href="#">Payment Link</a>
+    <a href="#">Cart Link</a>
+  </div>
+
+
+  <script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = "data.json";
+
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.responseText);
+        displayProducts(data);
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function displayProducts(data) {
+      var productsContainer = document.getElementById("products-container");
+
+      for (var i = 0; i < data.length; i++) {
+        var product = data[i];
+
+        var productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        //var productImage = document.createElement("img");
+        //productImage.src = product.image;
+
+        var productName = document.createElement("h2");
+        productName.innerHTML = product.name;
+
+        var productDescription = document.createElement("p");
+        productDescription.innerHTML = product.description;
+
+        var productPrice = document.createElement("p");
+        productPrice.innerHTML = "$" + product.price.toFixed(2);
+
+        //productCard.appendChild(productImage);
+        productCard.appendChild(productName);
+        productCard.appendChild(productDescription);
+        productCard.appendChild(productPrice);
+
+        productsContainer.appendChild(productCard);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

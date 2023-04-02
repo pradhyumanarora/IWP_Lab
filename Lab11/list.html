@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <style>
+        button{
+            width: 10vh;
+            height: 5vh;
+        }
+    </style>
+</head>
+<body>
+    <ul id="names">
+        <li>Disha</li>
+        <li>Preyash</li>
+        <li>Avani</li>
+        <li>Abhraneel</li>
+        <li>Dishant</li>
+        <li>Ritik</li>
+    </ul>
+
+    <button id="extract" onclick="extracttext()">
+        Extract Text
+    </button>
+    <div id="result"></div>
+</body>
+<script>
+   function extracttext(){
+        let items = $("ul#names li").toArray().map(li => li.textContent)
+        .join(", ");
+    $("#result").text(items);
+   }
+</script>
+</html>
