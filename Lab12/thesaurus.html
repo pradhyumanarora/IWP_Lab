@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thesaurus</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            width: 400px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"] {
+            margin: 0 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        #results {
+            margin-top: 50px;
+            text-align: center;
+            font-size: large;
+        }
+
+        form {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Thesaurus</h1>
+    <form>
+        <input type="text" id="word" name="word" placeholder="Enter a word">
+        <button type="button" onclick="searchThesaurus()">Search</button>
+        <label for="option">Select an option:</label>
+
+        <input type="radio" name="option" value="synonym">Synonym
+        <input type="radio" name="option" value="antonym">Antonym
+        <input type="radio" name="option" value="both" checked>Both
+    </form>
+    <div id="results"></div>
+    <div id="res"></div>
+</body>
+<script>
+    function searchThesaurus() {
+        var word = document.getElementById("word").value;
+        var option = document.querySelector('input[name="option"]:checked').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Parse the XML response
+                var xml = xhr.responseXML;
+                var terms = xml.getElementsByTagName("term");
+
+                for (var i = 0; i < terms.length; i++) {
+                    var term = terms[i];
+                    var wordElement = term.getElementsByTagName("word")[0];
+                    var wordValue = wordElement.textContent || wordElement.innerText;
+                    if (wordValue === word) {
+                        var results = "<h2>" + word + "</h2>";
+                        if (option === "synonym") {
+                            var synonyms = term.getElementsByTagName("synonym");
+                            if (synonyms.length > 0) {
+                                results += "<h3>Synonyms:</h3><ul>";
+                                for (var j = 0; j < synonyms.length; j++) {
+                                    results += "<li>" + synonyms[j].textContent + "</li>";
+                                }
+                                results += "</ul>";
+                            } else {
+                                results += "<p>No synonyms found for \"" + word + "\"</p>";
+                            }
+                        } else if (option === "antonym") {
+                            var antonyms = term.getElementsByTagName("antonym");
+                            if (antonyms.length > 0) {
+                                results += "<h3>Antonyms:</h3><ul>";
+                                for (var k = 0; k < antonyms.length; k++) {
+                                    results += "<li>" + antonyms[k].textContent + "</li>";
+                                }
+                                results += "</ul>";
+                            } else {
+                                results += "<p>No antonyms found for \"" + word + "\"</p>";
+                            }
+                        }
+                        else if (option === "both") {
+                            var synonyms = term.getElementsByTagName("synonym");
+                            if (synonyms.length > 0) {
+                                results += "<h3>Synonyms:</h3><ul>";
+                                for (var j = 0; j < synonyms.length; j++) {
+                                    results += "<li>" + synonyms[j].textContent + "</li>";
+                                }
+                                results += "</ul>";
+                            } else {
+                                results += "<p>No synonyms found for \"" + word + "\"</p>";
+                            }
+                            var antonyms = term.getElementsByTagName("antonym");
+                            if (antonyms.length > 0) {
+                                results += "<h3>Antonyms:</h3><ul>";
+                                for (var k = 0; k < antonyms.length; k++) {
+                                    results += "<li>" + antonyms[k].textContent + "</li>";
+                                }
+                                results += "</ul>";
+                            } else {
+                                results += "<p>No antonyms found for \"" + word + "\"</p>";
+                            }
+                        }
+
+                        document.getElementById("results").innerHTML = results;
+                        return; // Stop searching after the first match
+                    }
+                }
+
+                // If the word is not found, display an error message
+                document.getElementById("results").innerHTML = "<p>No results found for \"" + word + "\"</p>";
+            }
+        };
+        xhr.open("GET", "thesaurus.xml", true);
+        xhr.send();
+    }
+
+    //Change the above javascript code according to new html code and option for both
+
+
+
+
+</script>
+
+</html>
