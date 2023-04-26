@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="record" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title" type="xs:string"/>
+              <xs:element name="authors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author" type="xs:string" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="publisher" type="xs:string"/>
+              <xs:element name="ISBN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{13}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="publication_date">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{2}/\d{2}/\d{4}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+             
+          <xs:element name="language">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="English"/>
+                <xs:enumeration value="Tamil"/>
+                <xs:enumeration value="Hindi"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="total_pages" type="xs:integer"/>
+          <xs:element name="price">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal"/>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>

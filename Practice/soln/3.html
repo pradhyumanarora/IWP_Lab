@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    Text : <input type="text" id="toup">
+    <div id="mup" style="height: 50px; border:2px solid black;"></div>
+    <div id="hov" style="height: 50px; border:2px solid black;"></div>
+    
+</body>
+<script>
+    $(function(){
+        $('#toup').keyup(function(){
+            var text = $(this).val();
+            var text1 = text.toUpperCase();
+            $(this).val(text1);
+        })
+        $('#mup').mouseup(function(){
+            $(this).css('background-color','red');
+            $(this).css('color','white');
+            $(this).html('Welcome');
+        })
+        $('#mup').mousedown(function(){
+            $(this).css('background-color','white');
+            $(this).css('color','black');
+            $(this).text('Bye');
+        })
+        $('#hov').mouseover(function(){
+            $(this).css('background-color','Yellow');
+            //<!-- $(this).css('color','white'); -->
+            $(this).html('Hi');
+        })
+        $('#hov').mouseout(function(){
+            $(this).css('background-color','Green');
+            //$(this).css('color','black');
+            $(this).text('Bye');
+        })
+    })
+</script>
+</html>
